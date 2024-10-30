@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            height: 100vh;
+            color: rgb(255, 255, 255);
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 60px;
+            background-image: url('image/BACK.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 820px;
+            height: 340px;
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            margin-inline: 10px;
+        }
+
+        .card {
+            min-width: 70px;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            flex-grow: 1;
+            cursor: pointer;
+            position: relative;
+            transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-timing: 0.35s;
+        }
+
+        .card:hover {
+            flex-grow: 7;
+        }
+
+        .card > .background {
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.4);
+            z-index: -1;
+            transition: var(--transition-timing) ease;
+        }
+
+        .card:hover > .background {
+            filter: brightness(1);
+        }
+
+        .card > .card-content {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition-timing);
+            z-index: 10;
+        }
+
+        .card:hover > .card-content {
+            inset: 20px;
+            top: auto;
+        }
+
+        .card-content > * {
+            transition: var(--transition-timing);
+        }
+
+        .card-content > .title {
+            white-space: pre;
+            margin-left: 10px;
+            translate: 0 100%;
+            opacity: 0;
+        }
+
+        .card:hover .title {
+            opacity: 1;
+            translate: 0 0;
+        }
+
+        .card > .backdrop {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100px;
+            z-index: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        }
+
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            z-index: 1000;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: flex-start;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0;
+        }
+
+        .main-header img {
+            height: 120px;
+        }
+
+        #mytime-container {
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        #mytimezone {
+            margin-left: 10px;
+            font-size: 0.8em;
+            color: #ccc;
+        }
+
+        #timezone-button {
+            margin-right: -700px;
+            padding: 5px 5px;
+            background-color: #f28f0e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #timezone-button:hover {
+            background-color: #e74900;
+        }
+
+        a {
+            color: white;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 4vw;
+        }
+
+        nav ul {
+            margin-right: 4vw;
+            list-style: none;
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+
+        <button id="timezone-button">☞</button>    
+        <div id="mytime-container">
+            <h2 id="mytime">下午3:35:13</h2>
+            <span id="mytimezone">(Local Time)</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="RIKO.html">RIKO</a></li>
+                <li><a href="page2.html">PURPLE</a></li>
+                <li><a href="page3.html">LEO6</a></li>
+                <li><a href="page4.html">RICHIE</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <a href="RIKO.html" class="card">
+            <img class="background" src="image/RIKO.jpg" alt="">
+            <div class="card-content">
+                <h3 class="title">RIKO</h3>
+            </div>
+            <div class="backdrop"></div>
+        </a>
+    </div>
+    <div class="container">
+      <a href="page2.html" class="card">
+          <img class="background" src="image/TEAM2.jpg" alt="">
+          <div class="card-content">
+              <h3 class="title">PURPLE</h3>
+          </div>
+          <div class="backdrop"></div>
+      </a>
+  </div>
+  <div class="container">
+    <a href="page3.html" class="card">
+        <img class="background" src="image/TEAM3.jpg" alt="">
+        <div class="card-content">
+            <h3 class="title">LEO6</h3>
+        </div>
+        <div class="backdrop"></div>
+    </a>
+</div>
+<div class="container">
+  <a href="page4.html" class="card">
+      <img class="background" src="image/TEAM4.jpg" alt="">
+      <div class="card-content">
+          <h3 class="title">RICHIE</h3>
+      </div>
+      <div class="backdrop"></div>
+  </a>
+</div>
+    <script>
+        let currentTimezone = "local";
+
+        function showTime() {
+            const d = new Date();
+            let options = {};
+            let timezoneText = "(Local Time)";
+            if (currentTimezone === "japan") {
+                options = { timeZone: "Europe/Warsaw" };
+                timezoneText = "(Warsaw Time)";
+            } else if (currentTimezone === "usa") {
+                options = { timeZone: "America/New_York" };
+                timezoneText = "(USA Time)";
+            }
+            document.getElementById("mytime").innerHTML = d.toLocaleTimeString("zh-TW", options);
+            document.getElementById("mytimezone").innerHTML = timezoneText;
+            setTimeout(showTime, 1000);
+        }
+
+        document.getElementById("timezone-button").addEventListener("click", function() {
+            if (currentTimezone === "local") {
+                currentTimezone = "japan";
+            } else if (currentTimezone === "japan") {
+                currentTimezone = "usa";
+            } else {
+                currentTimezone = "local";
+            }
+        });
+
+        showTime();
+
+
+    </script>
+</body>
+</html>
